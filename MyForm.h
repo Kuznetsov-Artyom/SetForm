@@ -511,29 +511,42 @@ namespace FormsLR1 {
 
 		}
 #pragma endregion
-		// Установка размера универса
+
+// Устанавливает размера универса
 private: System::Void numericUpDownSizeUnivers_ValueChanged(System::Object^ sender, System::EventArgs^ e);
 
 
-	   // Добавляет элемент в первое множество
+
+
+// Добавляет элемент в первое множество
 private: System::Void buttonAddSetA_Click(System::Object^ sender, System::EventArgs^ e);
-	   // Добавляет элемент во второе множество
+// Добавляет элемент во второе множество
 private: System::Void buttonAddSetB_Click(System::Object^ sender, System::EventArgs^ e);
 
 
-	   // Удаляет элемент из первого множества
+
+
+// Удаляет элемент из первого множества
 private: System::Void buttonDelSetA_Click(System::Object^ sender, System::EventArgs^ e);
-	   // Удаляет элемент из второго множества
+// Удаляет элемент из второго множества
 private: System::Void buttonDelSetB_Click(System::Object^ sender, System::EventArgs^ e);
 	   
 
-	   // Объединение множеств
+
+
+// Выполняет объединение множеств
 private: System::Void buttonUnionSets_Click(System::Object^ sender, System::EventArgs^ e);
-	   // Пересечение множеств
+// Выполняет пересечение множеств
 private: System::Void buttonIntersectionSets_Click(System::Object^ sender, System::EventArgs^ e);
-	   // Отрицание первого множества
+// Выполняет отрицание первого множества
 private: System::Void buttonNegationA_Click(System::Object^ sender, System::EventArgs^ e);
-	   // Отрицание второго множества
+// Выполняет отрицание второго множества
 private: System::Void buttonNegationB_Click(System::Object^ sender, System::EventArgs^ e);
+
+
+
+
+// Сохраняет изменения при динамическом добавлении/удалении элементов
+private: System::Void saveChanges();
 };
 }

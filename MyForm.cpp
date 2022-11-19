@@ -23,12 +23,15 @@ TSet* setB = nullptr;
 
 
 
-// Преобразование String^ в std::string
+// Преобразовывает String^ в std::string
 void MarshalString(String^ s, std::string& str) {
 	using namespace Runtime::InteropServices;
+
 	const char* chars =
 		(const char*)(Marshal::StringToHGlobalAnsi(s)).ToPointer();
+
 	str = chars;
+
 	Marshal::FreeHGlobal(IntPtr((void*)chars));
 }
 // Заполняет вектор значениями из строки
@@ -53,10 +56,9 @@ void addElemsSet(std::vector<size_t> arr, TSet* (&set))
 }
 
 
-// Нужно реализовать функцию, которая исправит нарушение принципа DRY (мой костыль)
 
 
-// Установка размера универса
+// Устанавливает размера универса
 System::Void FormsLR1::MyForm::numericUpDownSizeUnivers_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	textBoxSetA->Clear();
@@ -91,35 +93,12 @@ System::Void FormsLR1::MyForm::numericUpDownSizeUnivers_ValueChanged(System::Obj
 }
 
 
+
+
 // Добавляет элемент в первое множество
 System::Void FormsLR1::MyForm::buttonAddSetA_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//
-
-	setA->clear();
-	setB->clear();
-
-	std::string strSetA{};
-	std::string strSetB{};
-
-	MarshalString(textBoxSetA->Text, strSetA);
-	MarshalString(textBoxSetB->Text, strSetB);
-
-	std::vector<size_t> setOne;
-	std::vector<size_t> setTwo;
-
-	fillVector(strSetA, setOne);
-	fillVector(strSetB, setTwo);
-
-	size_t sizeUn = setA->sizeUniverse();
-
-	addElemsSet(setOne, setA);
-	addElemsSet(setTwo, setB);
-
-	textBoxSetA->Text = gcnew String(setA->getString().c_str());
-	textBoxSetB->Text = gcnew String(setB->getString().c_str());
-
-	//
+	saveChanges();
 
 	size_t value = System::Convert::ToUInt64(numericUpDownSetA->Value);
 	
@@ -132,32 +111,7 @@ System::Void FormsLR1::MyForm::buttonAddSetA_Click(System::Object^ sender, Syste
 // Добавляет элемент во второе множество
 System::Void FormsLR1::MyForm::buttonAddSetB_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//
-
-	setA->clear();
-	setB->clear();
-
-	std::string strSetA{};
-	std::string strSetB{};
-
-	MarshalString(textBoxSetA->Text, strSetA);
-	MarshalString(textBoxSetB->Text, strSetB);
-
-	std::vector<size_t> setOne;
-	std::vector<size_t> setTwo;
-
-	fillVector(strSetA, setOne);
-	fillVector(strSetB, setTwo);
-
-	size_t sizeUn = setA->sizeUniverse();
-
-	addElemsSet(setOne, setA);
-	addElemsSet(setTwo, setB);
-
-	textBoxSetA->Text = gcnew String(setA->getString().c_str());
-	textBoxSetB->Text = gcnew String(setB->getString().c_str());
-
-	//
+	saveChanges();
 
 	size_t value = System::Convert::ToUInt64(numericUpDownSetB->Value);
 
@@ -169,35 +123,12 @@ System::Void FormsLR1::MyForm::buttonAddSetB_Click(System::Object^ sender, Syste
 }
 
 
+
+
 // Удаляет элемент из первого множества
 System::Void FormsLR1::MyForm::buttonDelSetA_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//
-
-	setA->clear();
-	setB->clear();
-
-	std::string strSetA{};
-	std::string strSetB{};
-
-	MarshalString(textBoxSetA->Text, strSetA);
-	MarshalString(textBoxSetB->Text, strSetB);
-
-	std::vector<size_t> setOne;
-	std::vector<size_t> setTwo;
-
-	fillVector(strSetA, setOne);
-	fillVector(strSetB, setTwo);
-
-	size_t sizeUn = setA->sizeUniverse();
-
-	addElemsSet(setOne, setA);
-	addElemsSet(setTwo, setB);
-
-	textBoxSetA->Text = gcnew String(setA->getString().c_str());
-	textBoxSetB->Text = gcnew String(setB->getString().c_str());
-
-	//
+	saveChanges();
 
 	size_t value = System::Convert::ToUInt64(numericUpDownSetA->Value);
 
@@ -210,32 +141,7 @@ System::Void FormsLR1::MyForm::buttonDelSetA_Click(System::Object^ sender, Syste
 // Удаляет элемент из второго множества
 System::Void FormsLR1::MyForm::buttonDelSetB_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//
-
-	setA->clear();
-	setB->clear();
-
-	std::string strSetA{};
-	std::string strSetB{};
-
-	MarshalString(textBoxSetA->Text, strSetA);
-	MarshalString(textBoxSetB->Text, strSetB);
-
-	std::vector<size_t> setOne;
-	std::vector<size_t> setTwo;
-
-	fillVector(strSetA, setOne);
-	fillVector(strSetB, setTwo);
-
-	size_t sizeUn = setA->sizeUniverse();
-
-	addElemsSet(setOne, setA);
-	addElemsSet(setTwo, setB);
-
-	textBoxSetA->Text = gcnew String(setA->getString().c_str());
-	textBoxSetB->Text = gcnew String(setB->getString().c_str());
-
-	//
+	saveChanges();
 
 	size_t value = System::Convert::ToUInt64(numericUpDownSetB->Value);
 
@@ -247,103 +153,39 @@ System::Void FormsLR1::MyForm::buttonDelSetB_Click(System::Object^ sender, Syste
 }
 
 
+
+
 // Объединение множеств
 System::Void FormsLR1::MyForm::buttonUnionSets_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//
-
-	setA->clear();
-	setB->clear();
-	
-	std::string strSetA{};
-	std::string strSetB{};
-
-	MarshalString(textBoxSetA->Text, strSetA);
-	MarshalString(textBoxSetB->Text, strSetB);
-
-	std::vector<size_t> setOne;
-	std::vector<size_t> setTwo;
-
-	fillVector(strSetA, setOne);
-	fillVector(strSetB, setTwo);
-
-	size_t sizeUn = setA->sizeUniverse();
-
-	addElemsSet(setOne, setA);
-	addElemsSet(setTwo, setB);
-
-	textBoxSetA->Text = gcnew String(setA->getString().c_str());
-	textBoxSetB->Text = gcnew String(setB->getString().c_str());
-	//
+	saveChanges();
 	textBoxResult->Text = gcnew String(setA->unionSets(*setB).getString().c_str());
 }
 // Пересечение множеств
 System::Void FormsLR1::MyForm::buttonIntersectionSets_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//
-
-	setA->clear();
-	setB->clear();
-
-	std::string strSetA{};
-	std::string strSetB{};
-
-	MarshalString(textBoxSetA->Text, strSetA);
-	MarshalString(textBoxSetB->Text, strSetB);
-
-	std::vector<size_t> setOne;
-	std::vector<size_t> setTwo;
-
-	fillVector(strSetA, setOne);
-	fillVector(strSetB, setTwo);
-
-	size_t sizeUn = setA->sizeUniverse();
-
-	addElemsSet(setOne, setA);
-	addElemsSet(setTwo, setB);
-
-	textBoxSetA->Text = gcnew String(setA->getString().c_str());
-	textBoxSetB->Text = gcnew String(setB->getString().c_str());
-
-	//
+	saveChanges();
 	textBoxResult->Text = gcnew String(setA->intersectionSets(*setB).getString().c_str());
 }
 // Отрицание первого множества
 System::Void FormsLR1::MyForm::buttonNegationA_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//
-
-	setA->clear();
-	setB->clear();
-
-	std::string strSetA{};
-	std::string strSetB{};
-
-	MarshalString(textBoxSetA->Text, strSetA);
-	MarshalString(textBoxSetB->Text, strSetB);
-
-	std::vector<size_t> setOne;
-	std::vector<size_t> setTwo;
-
-	fillVector(strSetA, setOne);
-	fillVector(strSetB, setTwo);
-
-	size_t sizeUn = setA->sizeUniverse();
-
-	addElemsSet(setOne, setA);
-	addElemsSet(setTwo, setB);
-
-	textBoxSetA->Text = gcnew String(setA->getString().c_str());
-	textBoxSetB->Text = gcnew String(setB->getString().c_str());
-
-	//
+	saveChanges();
 	textBoxResult->Text = gcnew String(setA->negation().getString().c_str());
 }
 // Отрицание второго множества
 System::Void FormsLR1::MyForm::buttonNegationB_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	//
+	saveChanges();
+	textBoxResult->Text = gcnew String(setB->negation().getString().c_str());
+}
 
+
+
+
+// Сохраняет изменения при динамическом добавлении/удалении элементов
+System::Void FormsLR1::MyForm::saveChanges()
+{
 	setA->clear();
 	setB->clear();
 
@@ -359,17 +201,9 @@ System::Void FormsLR1::MyForm::buttonNegationB_Click(System::Object^ sender, Sys
 	fillVector(strSetA, setOne);
 	fillVector(strSetB, setTwo);
 
-	size_t sizeUn = setA->sizeUniverse();
-
 	addElemsSet(setOne, setA);
 	addElemsSet(setTwo, setB);
 
 	textBoxSetA->Text = gcnew String(setA->getString().c_str());
 	textBoxSetB->Text = gcnew String(setB->getString().c_str());
-
-	//
-	textBoxResult->Text = gcnew String(setB->negation().getString().c_str());
 }
-
-
-
