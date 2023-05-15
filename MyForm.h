@@ -205,20 +205,18 @@ namespace FormsLR1 {
                         this->labelSizeUnivers->AutoSize = true;
                         this->labelSizeUnivers->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                19.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                18,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->labelSizeUnivers->Location =
                             System::Drawing::Point(12, 9);
                         this->labelSizeUnivers->Name = L"labelSizeUnivers";
                         this->labelSizeUnivers->Size =
-                            System::Drawing::Size(236, 40);
+                            System::Drawing::Size(189, 36);
                         this->labelSizeUnivers->TabIndex = 0;
-                        this->labelSizeUnivers->Text = L"Размер универса";
+                        this->labelSizeUnivers->Text     = L"Size universe";
                         //
                         // numericUpDownSizeUnivers
                         //
@@ -232,7 +230,7 @@ namespace FormsLR1 {
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->numericUpDownSizeUnivers->Location =
-                            System::Drawing::Point(268, 17);
+                            System::Drawing::Point(207, 18);
                         this->numericUpDownSizeUnivers->Maximum =
                             System::Decimal(gcnew cli::array<System::Int32>(4){
                                 100000000, 0, 0, 0});
@@ -258,17 +256,15 @@ namespace FormsLR1 {
                         //
                         this->labelSetA->AutoSize = true;
                         this->labelSetA->Font = (gcnew System::Drawing::Font(
-                            L"Monotype Corsiva",
-                            19.8F,
-                            static_cast<System::Drawing::FontStyle>(
-                                (System::Drawing::FontStyle::Bold |
-                                 System::Drawing::FontStyle::Italic)),
+                            L"Tahoma",
+                            18,
+                            System::Drawing::FontStyle::Regular,
                             System::Drawing::GraphicsUnit::Point,
                             static_cast<System::Byte>(204)));
                         this->labelSetA->Location =
-                            System::Drawing::Point(2, 22);
+                            System::Drawing::Point(18, 22);
                         this->labelSetA->Name = L"labelSetA";
-                        this->labelSetA->Size = System::Drawing::Size(48, 40);
+                        this->labelSetA->Size = System::Drawing::Size(44, 36);
                         this->labelSetA->TabIndex = 2;
                         this->labelSetA->Text     = L"A:";
                         //
@@ -312,17 +308,15 @@ namespace FormsLR1 {
                         //
                         this->labelSetB->AutoSize = true;
                         this->labelSetB->Font = (gcnew System::Drawing::Font(
-                            L"Monotype Corsiva",
-                            19.8F,
-                            static_cast<System::Drawing::FontStyle>(
-                                (System::Drawing::FontStyle::Bold |
-                                 System::Drawing::FontStyle::Italic)),
+                            L"Tahoma",
+                            18,
+                            System::Drawing::FontStyle::Regular,
                             System::Drawing::GraphicsUnit::Point,
                             static_cast<System::Byte>(204)));
                         this->labelSetB->Location =
-                            System::Drawing::Point(2, 152);
+                            System::Drawing::Point(18, 153);
                         this->labelSetB->Name = L"labelSetB";
-                        this->labelSetB->Size = System::Drawing::Size(48, 40);
+                        this->labelSetB->Size = System::Drawing::Size(44, 36);
                         this->labelSetB->TabIndex = 4;
                         this->labelSetB->Text     = L"B:";
                         //
@@ -363,11 +357,9 @@ namespace FormsLR1 {
                             System::Windows::Forms::Cursors::Hand;
                         this->buttonAddSetA->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                13.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                12,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->buttonAddSetA->Location =
@@ -377,7 +369,7 @@ namespace FormsLR1 {
                             System::Drawing::Size(134, 57);
                         this->buttonAddSetA->TabIndex = 7;
                         this->buttonAddSetA->TabStop  = false;
-                        this->buttonAddSetA->Text     = L"Добавить";
+                        this->buttonAddSetA->Text     = L"Add";
                         this->toolTipButtonAddSetA->SetToolTip(
                             this->buttonAddSetA,
                             L"Добавляет элемент в множество A");
@@ -392,11 +384,9 @@ namespace FormsLR1 {
                             System::Windows::Forms::Cursors::Hand;
                         this->buttonDelSetA->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                13.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                12,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->buttonDelSetA->Location =
@@ -406,7 +396,7 @@ namespace FormsLR1 {
                             System::Drawing::Size(134, 57);
                         this->buttonDelSetA->TabIndex = 8;
                         this->buttonDelSetA->TabStop  = false;
-                        this->buttonDelSetA->Text     = L"Удалить";
+                        this->buttonDelSetA->Text     = L"Delete";
                         this->toolTipButtonDelSetA->SetToolTip(
                             this->buttonDelSetA,
                             L"Удаляет элемент из множества A");
@@ -421,21 +411,19 @@ namespace FormsLR1 {
                             System::Windows::Forms::Cursors::Hand;
                         this->buttonUnionSets->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                13.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                12,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->buttonUnionSets->Location =
-                            System::Drawing::Point(424, 22);
+                            System::Drawing::Point(415, 161);
                         this->buttonUnionSets->Name = L"buttonUnionSets";
                         this->buttonUnionSets->Size =
-                            System::Drawing::Size(169, 65);
+                            System::Drawing::Size(169, 90);
                         this->buttonUnionSets->TabIndex = 12;
                         this->buttonUnionSets->TabStop  = false;
-                        this->buttonUnionSets->Text = L"Объединение";
+                        this->buttonUnionSets->Text     = L"Union";
                         this->toolTipButtonUnionSets->SetToolTip(
                             this->buttonUnionSets,
                             L"Выводит все элементы двух множеств");
@@ -456,7 +444,7 @@ namespace FormsLR1 {
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->textBoxResult->Location =
-                            System::Drawing::Point(667, 167);
+                            System::Drawing::Point(620, 64);
                         this->textBoxResult->Name     = L"textBoxResult";
                         this->textBoxResult->ReadOnly = true;
                         this->textBoxResult->Size =
@@ -468,19 +456,17 @@ namespace FormsLR1 {
                         //
                         this->label1->AutoSize = true;
                         this->label1->Font     = (gcnew System::Drawing::Font(
-                            L"Monotype Corsiva",
-                            19.8F,
-                            static_cast<System::Drawing::FontStyle>(
-                                (System::Drawing::FontStyle::Bold |
-                                 System::Drawing::FontStyle::Italic)),
+                            L"Tahoma",
+                            18,
+                            System::Drawing::FontStyle::Regular,
                             System::Drawing::GraphicsUnit::Point,
                             static_cast<System::Byte>(204)));
                         this->label1->Location =
-                            System::Drawing::Point(473, 156);
+                            System::Drawing::Point(513, 56);
                         this->label1->Name     = L"label1";
-                        this->label1->Size     = System::Drawing::Size(171, 40);
+                        this->label1->Size     = System::Drawing::Size(108, 36);
                         this->label1->TabIndex = 17;
-                        this->label1->Text     = L"Результат:";
+                        this->label1->Text     = L"Result:";
                         //
                         // buttonDelSetB
                         //
@@ -488,11 +474,9 @@ namespace FormsLR1 {
                             System::Windows::Forms::Cursors::Hand;
                         this->buttonDelSetB->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                13.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                12,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->buttonDelSetB->Location =
@@ -502,7 +486,7 @@ namespace FormsLR1 {
                             System::Drawing::Size(134, 57);
                         this->buttonDelSetB->TabIndex = 20;
                         this->buttonDelSetB->TabStop  = false;
-                        this->buttonDelSetB->Text     = L"Удалить";
+                        this->buttonDelSetB->Text     = L"Delete";
                         this->toolTipButtonDelSetB->SetToolTip(
                             this->buttonDelSetB,
                             L"Удаляет элемент из множества B");
@@ -517,11 +501,9 @@ namespace FormsLR1 {
                             System::Windows::Forms::Cursors::Hand;
                         this->buttonAddSetB->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                13.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                12,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->buttonAddSetB->Location =
@@ -531,7 +513,7 @@ namespace FormsLR1 {
                             System::Drawing::Size(134, 57);
                         this->buttonAddSetB->TabIndex = 19;
                         this->buttonAddSetB->TabStop  = false;
-                        this->buttonAddSetB->Text     = L"Добавить";
+                        this->buttonAddSetB->Text     = L"Add";
                         this->toolTipButtonAddSetB->SetToolTip(
                             this->buttonAddSetB,
                             L"Добавляет элемент в множество B");
@@ -577,22 +559,20 @@ namespace FormsLR1 {
                             System::Windows::Forms::Cursors::Hand;
                         this->buttonIntersectionSets->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                13.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                12,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->buttonIntersectionSets->Location =
-                            System::Drawing::Point(599, 22);
+                            System::Drawing::Point(590, 161);
                         this->buttonIntersectionSets->Name =
                             L"buttonIntersectionSets";
                         this->buttonIntersectionSets->Size =
-                            System::Drawing::Size(169, 65);
+                            System::Drawing::Size(169, 90);
                         this->buttonIntersectionSets->TabIndex = 21;
                         this->buttonIntersectionSets->TabStop  = false;
-                        this->buttonIntersectionSets->Text = L"Пересечение";
+                        this->buttonIntersectionSets->Text = L"Intersection";
                         this->toolTipButtonIntersectionSets->SetToolTip(
                             this->buttonIntersectionSets,
                             L"Выводит общие элементы двух множеств");
@@ -608,21 +588,19 @@ namespace FormsLR1 {
                             System::Windows::Forms::Cursors::Hand;
                         this->buttonNegationA->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                13.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                12,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->buttonNegationA->Location =
-                            System::Drawing::Point(774, 22);
+                            System::Drawing::Point(765, 161);
                         this->buttonNegationA->Name = L"buttonNegationA";
                         this->buttonNegationA->Size =
-                            System::Drawing::Size(169, 65);
+                            System::Drawing::Size(169, 90);
                         this->buttonNegationA->TabIndex = 22;
                         this->buttonNegationA->TabStop  = false;
-                        this->buttonNegationA->Text = L"Отрицание A";
+                        this->buttonNegationA->Text     = L"Negation A";
                         this->toolTipButtonNegationSetA->SetToolTip(
                             this->buttonNegationA,
                             L"Выводит все элементы, которые не содержатся в "
@@ -638,21 +616,19 @@ namespace FormsLR1 {
                             System::Windows::Forms::Cursors::Hand;
                         this->buttonNegationB->Font =
                             (gcnew System::Drawing::Font(
-                                L"Monotype Corsiva",
-                                13.8F,
-                                static_cast<System::Drawing::FontStyle>(
-                                    (System::Drawing::FontStyle::Bold |
-                                     System::Drawing::FontStyle::Italic)),
+                                L"Tahoma",
+                                12,
+                                System::Drawing::FontStyle::Regular,
                                 System::Drawing::GraphicsUnit::Point,
                                 static_cast<System::Byte>(204)));
                         this->buttonNegationB->Location =
-                            System::Drawing::Point(949, 22);
+                            System::Drawing::Point(940, 161);
                         this->buttonNegationB->Name = L"buttonNegationB";
                         this->buttonNegationB->Size =
-                            System::Drawing::Size(169, 65);
+                            System::Drawing::Size(169, 90);
                         this->buttonNegationB->TabIndex = 23;
                         this->buttonNegationB->TabStop  = false;
-                        this->buttonNegationB->Text = L"Отрицание B";
+                        this->buttonNegationB->Text     = L"Negation B";
                         this->toolTipButtonNegationSetB->SetToolTip(
                             this->buttonNegationB,
                             L"Выводит все элементы, которые не содержатся в "
@@ -668,12 +644,12 @@ namespace FormsLR1 {
                         this->groupBoxAll->Controls->Add(this->buttonNegationA);
                         this->groupBoxAll->Controls->Add(
                             this->buttonIntersectionSets);
+                        this->groupBoxAll->Controls->Add(this->textBoxResult);
+                        this->groupBoxAll->Controls->Add(this->label1);
                         this->groupBoxAll->Controls->Add(this->buttonDelSetB);
                         this->groupBoxAll->Controls->Add(this->buttonAddSetB);
                         this->groupBoxAll->Controls->Add(
                             this->numericUpDownSetB);
-                        this->groupBoxAll->Controls->Add(this->label1);
-                        this->groupBoxAll->Controls->Add(this->textBoxResult);
                         this->groupBoxAll->Controls->Add(this->buttonUnionSets);
                         this->groupBoxAll->Controls->Add(this->buttonDelSetA);
                         this->groupBoxAll->Controls->Add(this->buttonAddSetA);
@@ -778,7 +754,7 @@ namespace FormsLR1 {
                         this->Name          = L"MyForm";
                         this->StartPosition = System::Windows::Forms::
                             FormStartPosition::CenterScreen;
-                        this->Text = L"Операции над множествами";
+                        this->Text = L"Operations on sets";
                         (cli::safe_cast<
                              System::ComponentModel::ISupportInitialize ^>(
                              this->numericUpDownSizeUnivers))
