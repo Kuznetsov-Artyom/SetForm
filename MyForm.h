@@ -246,7 +246,7 @@ namespace FormsLR1 {
                             true;
                         this->toolTipSizeUnivers->SetToolTip(
                             this->numericUpDownSizeUnivers,
-                            L"Изменяет размер универса");
+                            L"Changes the size of the universe");
                         this->numericUpDownSizeUnivers->ValueChanged +=
                             gcnew System::EventHandler(
                                 this,
@@ -347,7 +347,7 @@ namespace FormsLR1 {
                             System::Windows::Forms::HorizontalAlignment::Center;
                         this->toolTipNumericSetA->SetToolTip(
                             this->numericUpDownSetA,
-                            L"Изменяет значение множества A");
+                            L"Changes the value of the set A");
                         this->numericUpDownSetA->Value = System::Decimal(
                             gcnew cli::array<System::Int32>(4){1, 0, 0, 0});
                         //
@@ -372,7 +372,7 @@ namespace FormsLR1 {
                         this->buttonAddSetA->Text     = L"Add";
                         this->toolTipButtonAddSetA->SetToolTip(
                             this->buttonAddSetA,
-                            L"Добавляет элемент в множество A");
+                            L"Adds an element to the set A");
                         this->buttonAddSetA->UseVisualStyleBackColor = true;
                         this->buttonAddSetA->Click +=
                             gcnew System::EventHandler(
@@ -399,7 +399,7 @@ namespace FormsLR1 {
                         this->buttonDelSetA->Text     = L"Delete";
                         this->toolTipButtonDelSetA->SetToolTip(
                             this->buttonDelSetA,
-                            L"Удаляет элемент из множества A");
+                            L"Removes an element from the set A");
                         this->buttonDelSetA->UseVisualStyleBackColor = true;
                         this->buttonDelSetA->Click +=
                             gcnew System::EventHandler(
@@ -426,7 +426,7 @@ namespace FormsLR1 {
                         this->buttonUnionSets->Text     = L"Union";
                         this->toolTipButtonUnionSets->SetToolTip(
                             this->buttonUnionSets,
-                            L"Выводит все элементы двух множеств");
+                            L"Outputs all elements of two sets");
                         this->buttonUnionSets->UseVisualStyleBackColor = true;
                         this->buttonUnionSets->Click +=
                             gcnew System::EventHandler(
@@ -489,7 +489,7 @@ namespace FormsLR1 {
                         this->buttonDelSetB->Text     = L"Delete";
                         this->toolTipButtonDelSetB->SetToolTip(
                             this->buttonDelSetB,
-                            L"Удаляет элемент из множества B");
+                            L"Removes an element from the set B");
                         this->buttonDelSetB->UseVisualStyleBackColor = true;
                         this->buttonDelSetB->Click +=
                             gcnew System::EventHandler(
@@ -516,7 +516,7 @@ namespace FormsLR1 {
                         this->buttonAddSetB->Text     = L"Add";
                         this->toolTipButtonAddSetB->SetToolTip(
                             this->buttonAddSetB,
-                            L"Добавляет элемент в множество B");
+                            L"Adds an element to the set B");
                         this->buttonAddSetB->UseVisualStyleBackColor = true;
                         this->buttonAddSetB->Click +=
                             gcnew System::EventHandler(
@@ -549,7 +549,7 @@ namespace FormsLR1 {
                             System::Windows::Forms::HorizontalAlignment::Center;
                         this->toolTipNumericSetB->SetToolTip(
                             this->numericUpDownSetB,
-                            L"Изменяет значение множества B");
+                            L"Changes the value of the set B");
                         this->numericUpDownSetB->Value = System::Decimal(
                             gcnew cli::array<System::Int32>(4){1, 0, 0, 0});
                         //
@@ -575,7 +575,7 @@ namespace FormsLR1 {
                         this->buttonIntersectionSets->Text = L"Intersection";
                         this->toolTipButtonIntersectionSets->SetToolTip(
                             this->buttonIntersectionSets,
-                            L"Выводит общие элементы двух множеств");
+                            L"Outputs common elements of two sets");
                         this->buttonIntersectionSets->UseVisualStyleBackColor =
                             true;
                         this->buttonIntersectionSets->Click +=
@@ -603,8 +603,8 @@ namespace FormsLR1 {
                         this->buttonNegationA->Text     = L"Negation A";
                         this->toolTipButtonNegationSetA->SetToolTip(
                             this->buttonNegationA,
-                            L"Выводит все элементы, которые не содержатся в "
-                            L"множестве A");
+                            L"Outputs all elements that are not contained in "
+                            L"the set A");
                         this->buttonNegationA->UseVisualStyleBackColor = true;
                         this->buttonNegationA->Click +=
                             gcnew System::EventHandler(
@@ -631,8 +631,8 @@ namespace FormsLR1 {
                         this->buttonNegationB->Text     = L"Negation B";
                         this->toolTipButtonNegationSetB->SetToolTip(
                             this->buttonNegationB,
-                            L"Выводит все элементы, которые не содержатся в "
-                            L"множестве B");
+                            L"Outputs all elements that are not contained in "
+                            L"the set B");
                         this->buttonNegationB->UseVisualStyleBackColor = true;
                         this->buttonNegationB->Click +=
                             gcnew System::EventHandler(
