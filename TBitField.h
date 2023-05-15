@@ -13,73 +13,59 @@ private:
 	size_t m_countTrue{};
 
 public:
-	// +-+-+-+-+-+-+-+-+-+-+-+ Конструкторы +-+-+-+-+-+-+-+-+-+-+-+
+	// +-+-+-+-+-+-+-+-+-+-+-+ Constructors +-+-+-+-+-+-+-+-+-+-+-+
 
-	// Конструктор с передачей параметра bits (количество битов)
 	TBitField(size_t bits);
-	// Конструктор с передачей параметра cstr (const char*)
 	TBitField(const char* cstr);
-	// Конструктор с передачей параметра str (std::string)
 	TBitField(std::string str);
-	// Конструктор копирования
 	TBitField(const TBitField& other);
 
 
 
 
-	// +-+-+-+-+-+-+-+-+-+-+-+ Методы +-+-+-+-+-+-+-+-+-+-+-+
+	// +-+-+-+-+-+-+-+-+-+-+-+ Methods +-+-+-+-+-+-+-+-+-+-+-+
 
-	// Устанавливает всем битам одно и тоже значение
+	// Sets all bits to the same value
 	TBitField& setAll(bool val = true);
-	// Устанавливает одному биту определенное значение
+    // Sets one bit to a specific value
 	TBitField& setBit(size_t pos, bool val = true);
 
 
-	// Изменяет все биты на противоположные (0 -> 1, 1 -> 0)
+	// Changes all bits to the opposite (0 -> 1, 1 -> 0)
 	TBitField& flipAll();
-	// Изменяет один бит на противоположный (0 -> 1, 1 -> 0)
+    // Changes one bit to the opposite (0 -> 1, 1 -> 0)
 	TBitField& flipBit(size_t pos);
 
 
-	// Показывает значение бита
+	// Shows the bit value
 	bool checkBit(size_t pos) const;
-	// Взвращает true, если все биты = 1, иначe false
+    // Returns true if all bits = 1, otherwise false
 	bool all() const noexcept;
-	// Возвращает ture, если найдется хотя бы один бит = 1, иначе false
+    // Returns true if there is at least one bit = 1, otherwise false
 	bool any() const noexcept;
 
 
-	// Возвращает размер битовой строки
+	// Returns the size of the bit string
 	size_t size() const noexcept;
-	// Возвращает количество битов с определенным значением
+    // Returns the number of bits with a certain value
 	size_t count(bool val = true) const noexcept;
-	// Возвращает биты в формате std::string
+    // Returns bits in std::string format
 	std::string toString() const noexcept;
 
 
 
 
-	// +-+-+-+-+-+-+-+-+-+-+-+ Перегрузка операторов +-+-+-+-+-+-+-+-+-+-+-+
+	// +-+-+-+-+-+-+-+-+-+-+-+ Operator overloading +-+-+-+-+-+-+-+-+-+-+-+
 
-	// Перегрузка оператора присваивания (=)
 	TBitField& operator = (const TBitField& other) noexcept;
-	// Перегрузка оператора равенства (==)
 	bool operator == (const TBitField& other) const noexcept;
-	// Перегрузка оператора неравенства (!=)
 	bool operator != (const TBitField& other) const noexcept;
-	// Оператор побитового И (&)
 	TBitField operator & (const TBitField& other) const noexcept;
-	// Оператор побитового ИЛИ (|)
 	TBitField operator | (const TBitField& other) const noexcept;
-	// Оператор побитового ИИСКЛЮЧАЮЩЕГО ИЛИ (^)
 	TBitField operator ^ (const TBitField& other) const noexcept;
-	// Метод побитового ОТРИЦАНИЯ (~)
 	TBitField operator ~ () const noexcept;
-	// Оператор побитового сдвига вправо на определенное количество бит
 	TBitField operator >> (const size_t val) const noexcept;
-	// Оператор побитового сдвига влево на определенное количество бит
 	TBitField operator << (const size_t val) const noexcept;
-	// Дружственная функция оператороа потока вывода
 	friend std::ostream& operator << (std::ostream& out, const TBitField& obj);
 };
 

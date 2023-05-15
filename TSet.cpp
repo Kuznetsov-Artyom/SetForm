@@ -1,9 +1,9 @@
 #include "TSet.h"
 
 
-// +-+-+-+-+-+-+-+-+-+-+-+ Методы +-+-+-+-+-+-+-+-+-+-+-+
+// +-+-+-+-+-+-+-+-+-+-+-+ Methods +-+-+-+-+-+-+-+-+-+-+-+
 
-// Добавляет элемент
+// Adds an element
 TSet& TSet::add(size_t elem)
 {
 	if (m_field.count() == m_size) return *this;
@@ -12,7 +12,7 @@ TSet& TSet::add(size_t elem)
 
 	return *this;
 }
-// Удаляет элемент
+// Deletes an element
 TSet& TSet::del(size_t elem)
 {
 	m_field.setBit(elem - 1, 0);
@@ -21,7 +21,7 @@ TSet& TSet::del(size_t elem)
 }
 
 
-// Объединение множеств
+// Combining sets
 TSet TSet::unionSets(const TSet& other) const
 {
 	TBitField field(m_field | other.m_field);
@@ -30,7 +30,7 @@ TSet TSet::unionSets(const TSet& other) const
 
 	return set;
 }
-// Пересечение множеств
+// Intersection of sets
 TSet TSet::intersectionSets(const TSet& other) const
 {
 	TBitField field(m_field & other.m_field);
@@ -39,7 +39,7 @@ TSet TSet::intersectionSets(const TSet& other) const
 
 	return set;
 }
-// Отрицание множества
+// Negation of the set
 TSet TSet::negation() const
 {
 	TBitField field(~m_field);
@@ -50,22 +50,22 @@ TSet TSet::negation() const
 }
 
 
-// Размер универса в котором находится множество
+// The size of the universe
 size_t TSet::sizeUniverse() const noexcept { return m_field.size(); }
-// Размер множества
+// Set size
 size_t TSet::sizeSet() const noexcept { return m_size; }
-// Количество элементов в множестве
+// The number of elements in the set
 size_t TSet::countFillSet() const noexcept { return m_field.count(); }
 
 
-// Проверяет наличие элемента в множестве
+// Checks for the presence of an element in the set
 bool TSet::checkElem(size_t elem)
 {
 	return m_field.checkBit(elem - 1);
 }
 
 
-// Переводит множество в строку
+// Converts a set to a string
 std::string TSet::getString() const
 {
 	std::stringstream str;
@@ -79,7 +79,7 @@ std::string TSet::getString() const
 
 	return str.str();
 }
-// Выводит вектор элементов множества
+// Outputs the vector of elements of the set
 std::vector<uint32_t> TSet::getValues() const
 {
 	std::vector<uint32_t> arr;

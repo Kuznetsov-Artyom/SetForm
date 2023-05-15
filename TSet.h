@@ -17,58 +17,52 @@ private:
 	size_t m_size;
 
 public:
-	// +-+-+-+-+-+-+-+-+-+-+-+ Конструкторы +-+-+-+-+-+-+-+-+-+-+-+
+	// +-+-+-+-+-+-+-+-+-+-+-+ Constructors +-+-+-+-+-+-+-+-+-+-+-+
 
-	// Конструктор с передачей параметров (универс, размер)
 	TSet(size_t univers, size_t size)
 		: m_field{ univers }, m_size{ (size <= univers) ? size : univers } {}
 
-	// Конструктор с передачей параметров (битовое поле, размер)
 	TSet(const TBitField& field, size_t size)
 		: m_field{ field }, m_size{ (size <= field.size() ? size : field.size()) } {}
 
-	// Конструктор копирования
 	TSet(const TSet& other) : m_field{ other.m_field }, m_size{ other.m_size } {}
 
 
-	// +-+-+-+-+-+-+-+-+-+-+-+ Методы +-+-+-+-+-+-+-+-+-+-+-+
+	// +-+-+-+-+-+-+-+-+-+-+-+ Methods +-+-+-+-+-+-+-+-+-+-+-+
 
-	// Добавляет элемент
+	// Adds an element
 	TSet& add(size_t elem);
-	// Удаляет элемент
+        // Deletes an element
 	TSet& del(size_t elem);
 
 
-	// Объединение множеств
+	// Combining sets
 	TSet unionSets(const TSet& other) const;
-	// Пересечение множеств
+        // Intersection of sets
 	TSet intersectionSets(const TSet& other) const;
-	// Отрицание множества
+        // Negation of the set
 	TSet negation() const;
 
 
-	// Размер универса в котором находится множество
+	// The size of the universe
 	size_t sizeUniverse() const noexcept;
-	// Размер множества
+    // Set size
 	size_t sizeSet() const noexcept;
-	// Количество элементов в множестве
+    // The number of elements in the set
 	size_t countFillSet() const noexcept;
 
 
-	// Проверяет наличие элемента в множестве
+	// Checks for the presence of an element in the set
 	bool checkElem(size_t elem);
 
 
-	// Переводит множество в строку
+	// Converts a set to a string
 	std::string getString() const;
-	// Выводит вектор элементов множества
+        // Outputs the vector of elements of the set
 	std::vector<uint32_t> getValues() const;
 
-	// Очищает элементы
-	void clear()
-	{
-		m_field.setAll(0);
-	}
+	// Clears the elements
+	void clear() { m_field.setAll(0); }
 };
 
 

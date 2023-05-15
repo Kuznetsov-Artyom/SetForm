@@ -23,7 +23,7 @@ TSet* setB = nullptr;
 
 
 
-// Преобразовывает String^ в std::string
+// Converts String^ to std::string
 void MarshalString(String^ s, std::string& str) {
 	using namespace Runtime::InteropServices;
 
@@ -34,7 +34,7 @@ void MarshalString(String^ s, std::string& str) {
 
 	Marshal::FreeHGlobal(IntPtr((void*)chars));
 }
-// Заполняет вектор значениями из строки
+// Fills a vector with values from a string
 void fillVector(const std::string& str, std::vector<size_t>& arr)
 {
 
@@ -44,7 +44,7 @@ void fillVector(const std::string& str, std::vector<size_t>& arr)
 	while (iss >> number)
 		arr.emplace_back(number);
 }
-// Добавляет элементы в множество
+// Adds elements to the set
 void addElemsSet(std::vector<size_t> arr, TSet* (&set))
 {
 	size_t sizeUn = set->sizeUniverse();
@@ -58,7 +58,7 @@ void addElemsSet(std::vector<size_t> arr, TSet* (&set))
 
 
 
-// Устанавливает размера универса
+// Sets the size of the universe
 System::Void FormsLR1::MyForm::numericUpDownSizeUnivers_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	textBoxSetA->Clear();
@@ -95,7 +95,7 @@ System::Void FormsLR1::MyForm::numericUpDownSizeUnivers_ValueChanged(System::Obj
 
 
 
-// Добавляет элемент в первое множество
+// Adds an element to the first set
 System::Void FormsLR1::MyForm::buttonAddSetA_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	saveChanges();
@@ -108,7 +108,7 @@ System::Void FormsLR1::MyForm::buttonAddSetA_Click(System::Object^ sender, Syste
 
 	textBoxSetA->Text = gcnew String(setA->getString().c_str());
 }
-// Добавляет элемент во второе множество
+// Adds an element to the second set
 System::Void FormsLR1::MyForm::buttonAddSetB_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	saveChanges();
@@ -125,7 +125,7 @@ System::Void FormsLR1::MyForm::buttonAddSetB_Click(System::Object^ sender, Syste
 
 
 
-// Удаляет элемент из первого множества
+// Removes an element from the first set
 System::Void FormsLR1::MyForm::buttonDelSetA_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	saveChanges();
@@ -138,7 +138,7 @@ System::Void FormsLR1::MyForm::buttonDelSetA_Click(System::Object^ sender, Syste
 
 	textBoxSetA->Text = gcnew String(setA->getString().c_str());
 }
-// Удаляет элемент из второго множества
+// Removes an element from the second set
 System::Void FormsLR1::MyForm::buttonDelSetB_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	saveChanges();
@@ -155,25 +155,25 @@ System::Void FormsLR1::MyForm::buttonDelSetB_Click(System::Object^ sender, Syste
 
 
 
-// Объединение множеств
+// Combining sets
 System::Void FormsLR1::MyForm::buttonUnionSets_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	saveChanges();
 	textBoxResult->Text = gcnew String(setA->unionSets(*setB).getString().c_str());
 }
-// Пересечение множеств
+// Intersection of sets
 System::Void FormsLR1::MyForm::buttonIntersectionSets_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	saveChanges();
 	textBoxResult->Text = gcnew String(setA->intersectionSets(*setB).getString().c_str());
 }
-// Отрицание первого множества
+// Negation of the first set
 System::Void FormsLR1::MyForm::buttonNegationA_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	saveChanges();
 	textBoxResult->Text = gcnew String(setA->negation().getString().c_str());
 }
-// Отрицание второго множества
+// Negation of the second set
 System::Void FormsLR1::MyForm::buttonNegationB_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	saveChanges();
@@ -183,7 +183,7 @@ System::Void FormsLR1::MyForm::buttonNegationB_Click(System::Object^ sender, Sys
 
 
 
-// Сохраняет изменения при динамическом добавлении/удалении элементов
+// Saves changes when dynamically adding/removing elements
 System::Void FormsLR1::MyForm::saveChanges()
 {
 	setA->clear();
